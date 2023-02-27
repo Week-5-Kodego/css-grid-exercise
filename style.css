@@ -1,0 +1,22 @@
+*,*::after, *::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.container {
+  display: grid;
+  background-color: lightblue;
+}
+
+.grid-item {
+  background-color: lightcoral;
+}
+
+.grid-item:nth-child(even) {
+  background-color: lightgoldenrodyellow;
+}
