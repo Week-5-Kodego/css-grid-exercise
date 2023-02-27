@@ -9,12 +9,29 @@ body {
 }
 
 .container {
+  position: relative;
   display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 2rem;
   background-color: lightblue;
+  padding: 2rem;
 }
 
 .grid-item {
+  height: 100px;
   background-color: lightcoral;
+}
+.grid-item:nth-child(3) {
+  color: white;
+}
+.grid-item:nth-child(3)::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin: 2rem;
+  z-index: 100;
+  background-color: aquamarine;
 }
 
 .grid-item:nth-child(even) {
