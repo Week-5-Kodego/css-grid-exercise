@@ -11,8 +11,8 @@ body {
 .container {
   position: relative;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  gap: 2rem;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
   background-color: lightblue;
   padding: 2rem;
 }
@@ -21,19 +21,32 @@ body {
   height: 100px;
   background-color: lightcoral;
 }
+
+.grid-col-span-2 {
+  grid-column: span 2;
+}
+
 .grid-item:nth-child(3) {
   color: white;
 }
-.grid-item:nth-child(3)::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  margin: 2rem;
-  z-index: 100;
-  background-color: aquamarine;
+.grid-item:nth-child(4) {
+  grid-row-start: 2;
+}
+.grid-item:nth-child(5) {
+  grid-column: 4;
+  height: auto;
+  grid-row-start: 1;
+  grid-row-end: 3;
 }
 
 .grid-item:nth-child(even) {
   background-color: lightgoldenrodyellow;
 }
+
+.grid-item::after {
+  content: ' after ';
+}
+.grid-item:nth-child(1)::after, .grid-item:nth-child(2)::before {
+  content: ' before ';
+}
+
