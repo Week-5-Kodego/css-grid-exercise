@@ -12,14 +12,15 @@ body {
   position: relative;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 1rem;
+  gap: 1.5rem;
   background-color: lightblue;
-  padding: 2rem;
+  padding: 10em;
 }
 
 .grid-item {
   height: 100px;
   background-color: lightcoral;
+  text-align: center;
 }
 
 .grid-col-span-2 {
@@ -31,12 +32,13 @@ body {
 }
 .grid-item:nth-child(4) {
   grid-row-start: 2;
-}
-.grid-item:nth-child(5) {
-  grid-column: 4;
   height: auto;
+}
+.grid-item:last-of-type {
+  grid-column: 4;
+  height: 100%;
   grid-row-start: 1;
-  grid-row-end: 3;
+  grid-row-end: span 2;
 }
 
 .grid-item:nth-child(even) {
@@ -49,4 +51,3 @@ body {
 .grid-item:nth-child(1)::after, .grid-item:nth-child(2)::before {
   content: ' before ';
 }
-
